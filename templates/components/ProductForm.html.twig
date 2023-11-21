@@ -1,0 +1,23 @@
+<div{{attributes}}>
+	{{ form_start(form, {
+        attr: {
+            'data-action': 'live#action',
+            'data-action-name': 'prevent|files|save'
+        }
+    }) }}
+	{{ form_widget(form) }}
+
+    {% if product is not null %}
+	<div class="images">
+
+		{% for image in product.images %}
+            <article>
+			    <img src="/uploads/{{ image.path }}" alt="">
+                <button data-action="live#action" data-action-name="prevent|delete(image={{ image.id }})">Delete image</button>
+            </article>
+		{% endfor %}
+	</div>
+    {% endif %}
+	<button class="btn">{{ buttonLabel }}</button>
+	{{ form_end(form) }}
+</div>

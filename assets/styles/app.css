@@ -1,1 +1,11 @@
-
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pico-spacing);
+    & article {
+        display: grid;
+    }
+    & img {
+        width: 150px;
+    }
+}
